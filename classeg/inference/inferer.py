@@ -136,7 +136,7 @@ class Inferer:
     def _get_datapoints(self):
         if os.path.isdir(glob.glob(f"{self.input_root}/*")[0]):
             paths = [x for x in glob.glob(f"{self.input_root}/images/*") if not os.path.isdir(x)]
-            datapoints = [Datapoint(x, x.replace("images", "masks")) for x in paths]
+            datapoints = [Datapoint(x, x.replace("/images", "/masks")) for x in paths]
         else:
             paths = [x for x in glob.glob(f"{self.input_root}/*") if not os.path.isdir(x)]
             datapoints = [Datapoint(x, None) for x in paths]

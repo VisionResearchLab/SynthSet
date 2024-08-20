@@ -205,7 +205,7 @@ class SuperResolutionInferer(Inferer):
         if self.output_name is None:
             return super().pre_infer()
         else:
-            save_path = f'{self.lookup_root}/super_resolved/{self.output_name}'
+            save_path = f'{self.lookup_root}/super_resolved_newest/{self.output_name}'
             if os.path.exists(save_path):
                 shutil.rmtree(save_path)
             os.makedirs(save_path)
